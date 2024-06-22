@@ -422,6 +422,11 @@ sky.material.uniforms["sunPosition"].value.set(0.3, -0.038, -0.95);
 scene.add(sky);
 
 /**
+ * Fog
+ */
+scene.fog = new THREE.FogExp2("#04343f", 0.1);
+
+/**
  * Animate
  */
 const timer = new Timer();
