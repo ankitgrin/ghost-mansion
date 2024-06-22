@@ -358,12 +358,12 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.x = 4;
 camera.position.y = 2;
-camera.position.z = 5;
+camera.position.z = 10;
 scene.add(camera);
 
 // Controls
 const controls = new OrbitControls(camera, canvas);
-controls.maxDistance = Math.PI * 4;
+controls.maxDistance = Math.PI * 5;
 controls.minDistance = Math.PI * 2;
 controls.maxPolarAngle = Math.PI * 0.47;
 controls.enableDamping = true;
