@@ -1,4 +1,4 @@
-# Haunted House
+# Ghost Mansion
 
 ## Setup
 

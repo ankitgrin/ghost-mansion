@@ -16,10 +16,23 @@ const canvas = document.querySelector("canvas.webgl");
 // Scene
 const scene = new THREE.Scene();
 
+// Loading Manager
+const loadingManager = new THREE.LoadingManager();
+loadingManager.onLoad = function () {
+  console.log("All items loaded.");
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("container").style.display = "block";
+
+  scene.add(house);
+  scene.add(floor);
+  scene.add(graves);
+  scene.add(ghost1, ghost2, ghost3);
+};
+
 /**
  * Textures
  */
-const textureLoader = new THREE.TextureLoader();
+const textureLoader = new THREE.TextureLoader(loadingManager);
 
 // Floor
 const floorAlphaTexture = textureLoader.load("./floor/alpha.webp");
@@ -159,7 +172,6 @@ const floor = new THREE.Mesh(
   })
 );
 floor.rotation.x = -Math.PI * 0.5;
-scene.add(floor);
 
 // gui
 //   .add(floor.material, "displacementScale")
@@ -176,7 +188,6 @@ scene.add(floor);
 
 // House container
 const house = new THREE.Group();
-scene.add(house);
 
 // Walls
 const walls = new THREE.Mesh(
@@ -270,7 +281,6 @@ const graveMaterial = new THREE.MeshStandardMaterial({
 });
 
 const graves = new THREE.Group();
-scene.add(graves);
 
 for (let i = 0; i < 30; i++) {
   const angle = Math.random() * Math.PI * 2;
@@ -312,7 +322,6 @@ house.add(doorLight);
 const ghost1 = new THREE.PointLight("#8800ff", 6);
 const ghost2 = new THREE.PointLight("#ff0088", 6);
 const ghost3 = new THREE.PointLight("#ff0000", 6);
-scene.add(ghost1, ghost2, ghost3);
 
 /**
  * Sizes
