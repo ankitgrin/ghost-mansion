@@ -20,8 +20,8 @@ const scene = new THREE.Scene();
 const loadingManager = new THREE.LoadingManager();
 loadingManager.onLoad = function () {
   console.log("All items loaded.");
-  // document.getElementById("loader").style.display = "none";
-  // document.getElementById("container").style.display = "block";
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("container").style.display = "block";
 
   scene.add(sky);
   scene.add(house);
