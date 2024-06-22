@@ -23,6 +23,7 @@ loadingManager.onLoad = function () {
   document.getElementById("loader").style.display = "none";
   document.getElementById("container").style.display = "block";
 
+  scene.add(sky);
   scene.add(house);
   scene.add(floor);
   scene.add(graves);
@@ -362,6 +363,9 @@ scene.add(camera);
 
 // Controls
 const controls = new OrbitControls(camera, canvas);
+controls.maxDistance = Math.PI * 4;
+controls.minDistance = Math.PI * 2;
+controls.maxPolarAngle = Math.PI * 0.47;
 controls.enableDamping = true;
 
 /**
@@ -428,7 +432,6 @@ sky.material.uniforms["rayleigh"].value = 3;
 sky.material.uniforms["mieCoefficient"].value = 0.1;
 sky.material.uniforms["mieDirectionalG"].value = 0.95;
 sky.material.uniforms["sunPosition"].value.set(0.3, -0.038, -0.95);
-scene.add(sky);
 
 /**
  * Fog
