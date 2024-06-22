@@ -20,8 +20,8 @@ const scene = new THREE.Scene();
 const loadingManager = new THREE.LoadingManager();
 loadingManager.onLoad = function () {
   console.log("All items loaded.");
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("container").style.display = "block";
+  // document.getElementById("loader").style.display = "none";
+  // document.getElementById("container").style.display = "block";
 
   scene.add(sky);
   scene.add(house);
@@ -365,7 +365,7 @@ scene.add(camera);
 const controls = new OrbitControls(camera, canvas);
 controls.maxDistance = Math.PI * 4;
 controls.minDistance = Math.PI * 2;
-controls.maxPolarAngle = Math.PI * 0.47;
+controls.maxPolarAngle = Math.PI * 0.5;
 controls.enableDamping = true;
 
 /**
