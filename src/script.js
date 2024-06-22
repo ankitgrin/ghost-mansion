@@ -439,6 +439,25 @@ sky.material.uniforms["sunPosition"].value.set(0.3, -0.038, -0.95);
 scene.fog = new THREE.FogExp2("#04343f", 0.1);
 
 /**
+ * Audio
+ */
+// create an AudioListener and add it to the camera
+const listener = new THREE.AudioListener();
+camera.add(listener);
+
+// create a global audio source
+const sound = new THREE.Audio(listener);
+
+// load a sound and set it as the Audio object's buffer
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load("./audio/audio.mp3", function (buffer) {
+  sound.setBuffer(buffer);
+  sound.setLoop(true);
+  sound.setVolume(0.5);
+  sound.play();
+});
+
+/**
  * Animate
  */
 const timer = new Timer();
