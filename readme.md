@@ -1,17 +1,15 @@
 # Ghost Mansion
 
-## Setup
+Welcome to Ghost Mansion, a spooky 3D scene created with Three.js!
 
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+## Description
 
-```bash
-# Install dependencies (only the first time)
-npm install
+Ghost Mansion is a haunted house surrounded by eerie graves, rendered in a 3D environment using Three.js. It aims to create a chilling atmosphere with its detailed models and atmospheric effects.
 
-# Run the local server at localhost:8080
-npm run dev
+## Features
 
-# Build for production in the dist/ directory
-npm run build
-```
+- **Haunted House:** A central feature of the scene, designed to evoke fear and curiosity.
+- **Graveyard:** Surrounding the haunted house, creating an ominous atmosphere.
+- **Interactive Elements:** Explore the scene and interact with objects using mouse or touch controls.
+- **Lighting and Effects:** Atmospheric lighting and effects to enhance the spooky ambiance.
+- **Customizable:** Easily extendable and customizable for adding more elements or interactions.
